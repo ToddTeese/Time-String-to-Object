@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <title>Time String to Object</title>
+
+        <style>
+            body {
+                width: 80%;
+                margin: 0 auto;
+            }
+
+            table {
+                margin-top: 1rem;
+            }
+
+            table > thead {
+                background-color: grey;
+                color: white;
+            }
+
+            td, th {
+                border: 1px solid black;
+                padding: 0.25rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header></header>
+        <main>
+            <h1>Time String to Object</h1>
+            <h3>Why do this?</h3>
+            <p>
+                After a couple rounds of iteration it's been found that having a standardised method of time input is of benefit for several clients as well as for
+                internal time keeping for projects.
+                The easiest idea of time input is a simple string input, we can then use that and gain values to be utilized in different systems
+            </p>
+
+            <p>
+                So first iteration done, what have we learned? That regex within JS works a bit differently looking globally as opposed to first match.
+                This is a benefit, it allows a first search to find all matching phrases, then a first match to decompose the phrase into groups which
+                we can then use for our actions.
+            </p>
+
+            <p>
+                Currently the system works with integer and decimal numbers, and for seconds through to weeks. If duplicate keys are used, the result is 
+                additive, (i.e 1h2h -> hours:3), if non keys are used they are ignored rather than throwing errors.  
+            </p>
+
+            <!-- TIME INPUT -->
+            <form>
+                <label for="timeInput">Input Time</label>
+                <input id="timeInput">
+                <input type=submit />
+            </form>
+
+
+            <!-- TIME DISPLAY -->
+            <table>
+                <thead>
+                    <tr>
+                        <th colspan="2">Time Display</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Seconds</td>
+                        <td id="second">0</td>
+                    </tr>
+                    <tr>
+                        <td>Minutes</td>
+                        <td id="minute">0</td>
+                    </tr>
+                    <tr>
+                        <td>Hours</td>
+                        <td id="hour">0</td>
+                    </tr>
+                    <tr>
+                        <td>Days</td>
+                        <td id="day">0</td>
+                    </tr>
+                    <tr>
+                        <td>Weeks</td>
+                        <td id="week">0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </main>
+
+        <script src="./timeObject.js"></script>
+        <script src="./app.js"></script>
+        <footer></footer>
+    </body>
+</html>
